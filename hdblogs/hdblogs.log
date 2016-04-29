@@ -1,0 +1,406 @@
+[INFO][2016-04-29 11:48:17,917][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+[INFO][2016-04-29 11:48:17,971][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Apr 29 11:48:17 CST 2016]; root of context hierarchy
+[INFO][2016-04-29 11:48:18,003][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+[INFO][2016-04-29 11:48:18,102][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[WARN][2016-04-29 11:48:18,241][org.mybatis.spring.mapper.ClassPathMapperScanner]No MyBatis mapper was found in '[cn.edu.hdu.hdblogs.dao]' package. Please check your configuration.
+[INFO][2016-04-29 11:48:18,249][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [config.properties]
+[INFO][2016-04-29 11:48:18,255][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][2016-04-29 11:48:18,273][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@cae8bb: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,targetMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,druid-stat-interceptor,druid-stat-pointcut,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#1,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[ERROR][2016-04-29 11:48:18,517][com.alibaba.druid.pool.DruidAbstractDataSource]maxIdle is deprecated
+[INFO][2016-04-29 11:48:18,553][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+[WARN][2016-04-29 11:48:18,606][org.springframework.web.context.support.XmlWebApplicationContext]Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Initialization of bean failed; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.core.io.Resource[]' for property 'mapperLocations'; nested exception is java.lang.IllegalArgumentException: Could not resolve resource location pattern [classpath:mapper/*.xml]: class path resource [mapper/] cannot be resolved to URL because it does not exist
+[INFO][2016-04-29 11:48:18,606][org.springframework.beans.factory.support.DefaultListableBeanFactory]Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@cae8bb: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,targetMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,druid-stat-interceptor,druid-stat-pointcut,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#1,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[INFO][2016-04-29 11:48:18,607][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+[ERROR][2016-04-29 11:48:18,608][org.springframework.web.context.ContextLoader]Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Initialization of bean failed; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.core.io.Resource[]' for property 'mapperLocations'; nested exception is java.lang.IllegalArgumentException: Could not resolve resource location pattern [classpath:mapper/*.xml]: class path resource [mapper/] cannot be resolved to URL because it does not exist
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:293)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:290)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:191)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:618)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:938)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:410)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:112)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4135)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4630)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:785)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:445)
+	at org.apache.catalina.startup.Embedded.start(Embedded.java:825)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.startContainer(AbstractRunMojo.java:558)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.execute(AbstractRunMojo.java:255)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.core.io.Resource[]' for property 'mapperLocations'; nested exception is java.lang.IllegalArgumentException: Could not resolve resource location pattern [classpath:mapper/*.xml]: class path resource [mapper/] cannot be resolved to URL because it does not exist
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:469)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:495)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.convertForProperty(AbstractAutowireCapableBeanFactory.java:1465)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1424)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	... 42 more
+Caused by: java.lang.IllegalArgumentException: Could not resolve resource location pattern [classpath:mapper/*.xml]: class path resource [mapper/] cannot be resolved to URL because it does not exist
+	at org.springframework.core.io.support.ResourceArrayPropertyEditor.setAsText(ResourceArrayPropertyEditor.java:139)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:455)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:427)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:181)
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:449)
+	... 48 more
+[INFO][2016-04-29 11:50:09,055][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+[INFO][2016-04-29 11:50:09,108][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Apr 29 11:50:09 CST 2016]; root of context hierarchy
+[INFO][2016-04-29 11:50:09,137][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+[INFO][2016-04-29 11:50:09,244][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[WARN][2016-04-29 11:50:09,429][org.mybatis.spring.mapper.ClassPathMapperScanner]No MyBatis mapper was found in '[cn.edu.hdu.hdblogs.dao]' package. Please check your configuration.
+[INFO][2016-04-29 11:50:09,435][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [config.properties]
+[INFO][2016-04-29 11:50:09,441][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][2016-04-29 11:50:09,460][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3c4c0: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,targetMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,druid-stat-interceptor,druid-stat-pointcut,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#1,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[ERROR][2016-04-29 11:50:09,629][com.alibaba.druid.pool.DruidAbstractDataSource]maxIdle is deprecated
+[INFO][2016-04-29 11:50:09,670][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+[WARN][2016-04-29 11:50:09,723][org.springframework.web.context.support.XmlWebApplicationContext]Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Initialization of bean failed; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.core.io.Resource[]' for property 'mapperLocations'; nested exception is java.lang.IllegalArgumentException: Could not resolve resource location pattern [classpath:mapper/*.xml]: class path resource [mapper/] cannot be resolved to URL because it does not exist
+[INFO][2016-04-29 11:50:09,723][org.springframework.beans.factory.support.DefaultListableBeanFactory]Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3c4c0: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,targetMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,druid-stat-interceptor,druid-stat-pointcut,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#1,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[INFO][2016-04-29 11:50:09,724][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+[ERROR][2016-04-29 11:50:09,724][org.springframework.web.context.ContextLoader]Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Initialization of bean failed; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.core.io.Resource[]' for property 'mapperLocations'; nested exception is java.lang.IllegalArgumentException: Could not resolve resource location pattern [classpath:mapper/*.xml]: class path resource [mapper/] cannot be resolved to URL because it does not exist
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:293)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:290)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:191)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:618)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:938)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:410)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:112)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4135)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4630)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:785)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:445)
+	at org.apache.catalina.startup.Embedded.start(Embedded.java:825)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.startContainer(AbstractRunMojo.java:558)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.execute(AbstractRunMojo.java:255)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.core.io.Resource[]' for property 'mapperLocations'; nested exception is java.lang.IllegalArgumentException: Could not resolve resource location pattern [classpath:mapper/*.xml]: class path resource [mapper/] cannot be resolved to URL because it does not exist
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:469)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:495)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.convertForProperty(AbstractAutowireCapableBeanFactory.java:1465)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1424)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	... 42 more
+Caused by: java.lang.IllegalArgumentException: Could not resolve resource location pattern [classpath:mapper/*.xml]: class path resource [mapper/] cannot be resolved to URL because it does not exist
+	at org.springframework.core.io.support.ResourceArrayPropertyEditor.setAsText(ResourceArrayPropertyEditor.java:139)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:455)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:427)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:181)
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:449)
+	... 48 more
+[INFO][2016-04-29 11:53:19,941][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+[INFO][2016-04-29 11:53:20,054][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Apr 29 11:53:20 CST 2016]; root of context hierarchy
+[INFO][2016-04-29 11:53:20,084][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+[INFO][2016-04-29 11:53:20,187][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[WARN][2016-04-29 11:53:20,324][org.mybatis.spring.mapper.ClassPathMapperScanner]No MyBatis mapper was found in '[cn.edu.hdu.hdblogs.dao]' package. Please check your configuration.
+[INFO][2016-04-29 11:53:20,331][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [config.properties]
+[INFO][2016-04-29 11:53:20,337][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][2016-04-29 11:53:20,358][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1bd250a: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,targetMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,druid-stat-interceptor,druid-stat-pointcut,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#1,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[ERROR][2016-04-29 11:53:20,601][com.alibaba.druid.pool.DruidAbstractDataSource]maxIdle is deprecated
+[INFO][2016-04-29 11:53:20,639][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+[WARN][2016-04-29 11:53:20,695][org.springframework.web.context.support.XmlWebApplicationContext]Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Initialization of bean failed; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.core.io.Resource[]' for property 'mapperLocations'; nested exception is java.lang.IllegalArgumentException: Could not resolve resource location pattern [classpath:mapper/*.xml]: class path resource [mapper/] cannot be resolved to URL because it does not exist
+[INFO][2016-04-29 11:53:20,696][org.springframework.beans.factory.support.DefaultListableBeanFactory]Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1bd250a: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,targetMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,druid-stat-interceptor,druid-stat-pointcut,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#1,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[INFO][2016-04-29 11:53:20,696][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+[ERROR][2016-04-29 11:53:20,697][org.springframework.web.context.ContextLoader]Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Initialization of bean failed; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.core.io.Resource[]' for property 'mapperLocations'; nested exception is java.lang.IllegalArgumentException: Could not resolve resource location pattern [classpath:mapper/*.xml]: class path resource [mapper/] cannot be resolved to URL because it does not exist
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:293)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:290)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:191)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:618)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:938)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:410)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:112)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4135)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4630)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:785)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:445)
+	at org.apache.catalina.startup.Embedded.start(Embedded.java:825)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.startContainer(AbstractRunMojo.java:558)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.execute(AbstractRunMojo.java:255)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.core.io.Resource[]' for property 'mapperLocations'; nested exception is java.lang.IllegalArgumentException: Could not resolve resource location pattern [classpath:mapper/*.xml]: class path resource [mapper/] cannot be resolved to URL because it does not exist
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:469)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:495)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.convertForProperty(AbstractAutowireCapableBeanFactory.java:1465)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1424)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	... 42 more
+Caused by: java.lang.IllegalArgumentException: Could not resolve resource location pattern [classpath:mapper/*.xml]: class path resource [mapper/] cannot be resolved to URL because it does not exist
+	at org.springframework.core.io.support.ResourceArrayPropertyEditor.setAsText(ResourceArrayPropertyEditor.java:139)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:455)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:427)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:181)
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:449)
+	... 48 more
+[INFO][2016-04-29 11:54:30,630][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+[INFO][2016-04-29 11:54:30,688][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Apr 29 11:54:30 CST 2016]; root of context hierarchy
+[INFO][2016-04-29 11:54:30,721][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+[INFO][2016-04-29 11:54:30,818][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[WARN][2016-04-29 11:54:30,959][org.mybatis.spring.mapper.ClassPathMapperScanner]No MyBatis mapper was found in '[cn.edu.hdu.hdblogs.dao]' package. Please check your configuration.
+[INFO][2016-04-29 11:54:30,966][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [config.properties]
+[INFO][2016-04-29 11:54:30,971][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][2016-04-29 11:54:30,989][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@13e8935: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,targetMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,druid-stat-interceptor,druid-stat-pointcut,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#1,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[ERROR][2016-04-29 11:54:31,231][com.alibaba.druid.pool.DruidAbstractDataSource]maxIdle is deprecated
+[INFO][2016-04-29 11:54:31,272][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+[WARN][2016-04-29 11:54:31,365][org.springframework.web.context.support.XmlWebApplicationContext]Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\ProgramFiles\eclipseNew\workspace\hdblogs\target\classes\mapper\user.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; 文件提前结束。
+[INFO][2016-04-29 11:54:31,365][org.springframework.beans.factory.support.DefaultListableBeanFactory]Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@13e8935: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,targetMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,druid-stat-interceptor,druid-stat-pointcut,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#1,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[INFO][2016-04-29 11:54:31,366][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+[ERROR][2016-04-29 11:54:31,366][org.springframework.web.context.ContextLoader]Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\ProgramFiles\eclipseNew\workspace\hdblogs\target\classes\mapper\user.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; 文件提前结束。
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:293)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:290)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:191)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:618)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:938)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:410)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:112)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4135)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4630)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:785)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:445)
+	at org.apache.catalina.startup.Embedded.start(Embedded.java:825)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.startContainer(AbstractRunMojo.java:558)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.execute(AbstractRunMojo.java:255)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\ProgramFiles\eclipseNew\workspace\hdblogs\target\classes\mapper\user.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; 文件提前结束。
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:484)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1573)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1511)
+	... 43 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; 文件提前结束。
+	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:256)
+	at org.apache.ibatis.parsing.XPathParser.<init>(XPathParser.java:125)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.<init>(XMLMapperBuilder.java:78)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:481)
+	... 46 more
+Caused by: org.xml.sax.SAXParseException; 文件提前结束。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:198)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1436)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$DTDDriver.dispatch(XMLDocumentScannerImpl.java:1199)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$DTDDriver.next(XMLDocumentScannerImpl.java:1050)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:964)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:347)
+	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:254)
+	... 49 more
+[INFO][2016-04-29 11:55:30,499][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+[INFO][2016-04-29 11:55:30,552][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Apr 29 11:55:30 CST 2016]; root of context hierarchy
+[INFO][2016-04-29 11:55:30,584][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+[INFO][2016-04-29 11:55:30,689][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[WARN][2016-04-29 11:55:30,874][org.mybatis.spring.mapper.ClassPathMapperScanner]No MyBatis mapper was found in '[cn.edu.hdu.hdblogs.dao]' package. Please check your configuration.
+[INFO][2016-04-29 11:55:30,880][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [config.properties]
+[INFO][2016-04-29 11:55:30,886][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][2016-04-29 11:55:30,904][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a7416: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,targetMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,druid-stat-interceptor,druid-stat-pointcut,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#1,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[ERROR][2016-04-29 11:55:31,091][com.alibaba.druid.pool.DruidAbstractDataSource]maxIdle is deprecated
+[INFO][2016-04-29 11:55:31,128][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+[INFO][2016-04-29 11:55:31,229][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 730 ms
+[INFO][2016-04-29 11:55:31,256][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+[INFO][2016-04-29 11:55:31,258][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Fri Apr 29 11:55:31 CST 2016]; parent: Root WebApplicationContext
+[INFO][2016-04-29 11:55:31,259][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][2016-04-29 11:55:31,293][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][2016-04-29 11:55:31,294][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@e8971b: defining beans [testController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,viewResolver,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@a7416
+[INFO][2016-04-29 11:55:31,341][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/test/test] onto handler 'testController'
+[INFO][2016-04-29 11:55:31,341][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/test/test.*] onto handler 'testController'
+[INFO][2016-04-29 11:55:31,341][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/test/test/] onto handler 'testController'
+[INFO][2016-04-29 11:55:31,430][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 174 ms
+[INFO][2016-04-29 11:55:36,040][cn.edu.hdu.hdblogs.controller.TestController]hell0
+[INFO][2016-04-29 11:56:55,869][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+[INFO][2016-04-29 11:56:55,983][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Apr 29 11:56:55 CST 2016]; root of context hierarchy
+[INFO][2016-04-29 11:56:56,015][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+[INFO][2016-04-29 11:56:56,122][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[WARN][2016-04-29 11:56:56,270][org.mybatis.spring.mapper.ClassPathMapperScanner]No MyBatis mapper was found in '[cn.edu.hdu.hdblogs.dao]' package. Please check your configuration.
+[INFO][2016-04-29 11:56:56,277][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [config.properties]
+[INFO][2016-04-29 11:56:56,283][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][2016-04-29 11:56:56,302][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1e763b: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,targetMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,druid-stat-interceptor,druid-stat-pointcut,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#1,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[ERROR][2016-04-29 11:56:56,542][com.alibaba.druid.pool.DruidAbstractDataSource]maxIdle is deprecated
+[INFO][2016-04-29 11:56:56,580][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+[WARN][2016-04-29 11:56:56,632][org.springframework.web.context.support.XmlWebApplicationContext]Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Initialization of bean failed; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.core.io.Resource[]' for property 'mapperLocations'; nested exception is java.lang.IllegalArgumentException: Could not resolve resource location pattern [classpath:mapper/*.xml]: class path resource [mapper/] cannot be resolved to URL because it does not exist
+[INFO][2016-04-29 11:56:56,632][org.springframework.beans.factory.support.DefaultListableBeanFactory]Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1e763b: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,targetMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,druid-stat-interceptor,druid-stat-pointcut,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#1,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[INFO][2016-04-29 11:56:56,633][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+[ERROR][2016-04-29 11:56:56,634][org.springframework.web.context.ContextLoader]Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring-mybatis.xml]: Initialization of bean failed; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.core.io.Resource[]' for property 'mapperLocations'; nested exception is java.lang.IllegalArgumentException: Could not resolve resource location pattern [classpath:mapper/*.xml]: class path resource [mapper/] cannot be resolved to URL because it does not exist
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:293)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:290)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:191)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:618)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:938)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:410)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:112)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4135)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4630)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:785)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:445)
+	at org.apache.catalina.startup.Embedded.start(Embedded.java:825)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.startContainer(AbstractRunMojo.java:558)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.execute(AbstractRunMojo.java:255)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.core.io.Resource[]' for property 'mapperLocations'; nested exception is java.lang.IllegalArgumentException: Could not resolve resource location pattern [classpath:mapper/*.xml]: class path resource [mapper/] cannot be resolved to URL because it does not exist
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:469)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:495)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.convertForProperty(AbstractAutowireCapableBeanFactory.java:1465)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1424)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	... 42 more
+Caused by: java.lang.IllegalArgumentException: Could not resolve resource location pattern [classpath:mapper/*.xml]: class path resource [mapper/] cannot be resolved to URL because it does not exist
+	at org.springframework.core.io.support.ResourceArrayPropertyEditor.setAsText(ResourceArrayPropertyEditor.java:139)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:455)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:427)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:181)
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:449)
+	... 48 more
