@@ -4,7 +4,7 @@
 	<groupId>cn.edu.hdu</groupId>
 	<artifactId>hdblogs</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>V1.0.0</version>
 	<name>hdblogs Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
@@ -69,6 +69,11 @@
 			<version>3.2.16.RELEASE</version>
 		</dependency>
 		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.23</version>
+		</dependency>
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.38</version>
@@ -102,6 +107,11 @@
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.6.2</version>
 		</dependency>
 	</dependencies>
 

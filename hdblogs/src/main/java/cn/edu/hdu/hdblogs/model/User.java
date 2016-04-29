@@ -27,7 +27,6 @@ public class User {
 	private String userName;
 	private String passWord;
 	private String email;
-	private boolean gender;
 	/**
 	 * @return the id
 	 */
@@ -76,16 +75,5 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	/**
-	 * @return the gender
-	 */
-	public boolean isGender() {
-		return gender;
-	}
-	/**
-	 * @param gender the gender to set
-	 */
-	public void setGender(boolean gender) {
-		this.gender = gender;
-	}
+
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.hdu.hdblogs.dao.IArticleDao">
+
+
+	<sql id="articleColumns">
+		id,
+		title,
+		content,
+		author_id as authorId,
+		create_date as createDate,
+		clicks
+	</sql>
+
+	<select id="findArticle" parameterType="cn.edu.hdu.hdblogs.model.Article"
+		resultType="cn.edu.hdu.hdblogs.model.Article">
+		SELECT
+		<include refid="articleColumns" />
+		FROM t_article WHERE 1=1
+		<if test="id != null">
+			AND id=#{id}
+		</if>
+		<if test="authorId != null">
+			AND authorId=#{authorId}
+		</if>
+	</select>
+
+
+</mapper>

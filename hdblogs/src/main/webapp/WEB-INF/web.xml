@@ -6,10 +6,10 @@
 
 	<display-name>Archetype Created Web Application</display-name>
 
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring.xml,classpath:spring-mybatis.xml</param-value>
-    </context-param>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring.xml,classpath:spring-mybatis.xml</param-value>
+	</context-param>
 
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -30,16 +30,16 @@
 	</servlet-mapping>
 
 	<welcome-file-list>
-		<welcome-file>/WEB-INF/jsp/index.jsp</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 
 	<error-page>
 		<error-code>404</error-code>
 		<location>/WEB-INF/jsp/error/404.jsp</location>
 	</error-page>
-	
+
 	<session-config>
 		<session-timeout>30</session-timeout>
 	</session-config>
-	
+
 </web-app>
