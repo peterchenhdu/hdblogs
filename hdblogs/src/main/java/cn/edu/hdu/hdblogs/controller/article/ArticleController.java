@@ -11,7 +11,7 @@
  * Bugzilla Id: 
  * Modify Content: 
  */
-package cn.edu.hdu.hdblogs.controller;
+package cn.edu.hdu.hdblogs.controller.article;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -27,10 +27,10 @@ import cn.edu.hdu.hdblogs.service.IArticleService;
 
 /**
  * 
- * @author    Pi Chen
- * @version   HDBlogs V1.0.0, 2016年4月29日
- * @see       
- * @since     HDBlogs V1.0.0
+ * @author Pi Chen
+ * @version HDBlogs V1.0.0, 2016年4月29日
+ * @see
+ * @since HDBlogs V1.0.0
  */
 
 @Controller
@@ -39,26 +39,11 @@ public class ArticleController {
 
 	@Autowired
 	private IArticleService articleService;
-	
-	@RequestMapping(value = "/getAll")
-	public ModelAndView getAllArticle(){
-		 ModelAndView modelAndView = new ModelAndView("/index");
-		 
-		 List<Article> articleList = new ArrayList<Article>();
-		 for(int i = 0; i < 5; i++){
-			 Article a = new Article();
-			 a.setAuthorId(new Long(i));
-			 a.setId(new Long(i));
-			 a.setClicks(new Long(i));
-			 a.setContent(i+"");
-			 a.setTitle(i+"");
-			 a.setCreateDate(new Date());
-			 articleList.add(a);
-		 }
-		 
-		 modelAndView.addObject("articleList", articleList);
-	       
-	        
-	        return modelAndView;
+
+	@RequestMapping(value = "/add")
+	public ModelAndView getAllArticle() {
+		ModelAndView modelAndView = new ModelAndView("/article/add_article");
+
+		return modelAndView;
 	}
 }

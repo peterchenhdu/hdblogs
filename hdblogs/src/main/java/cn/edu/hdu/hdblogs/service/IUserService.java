@@ -29,4 +29,6 @@ public interface IUserService {
 
 	public List<User> findUser(User user);
 	
+	public User findById(Long id);
+	
 }

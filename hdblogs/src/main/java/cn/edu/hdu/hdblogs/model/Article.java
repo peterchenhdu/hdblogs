@@ -103,4 +103,5 @@ public class Article {
 	public void setAuthorId(Long authorId) {
 		this.authorId = authorId;
 	}
+
 }

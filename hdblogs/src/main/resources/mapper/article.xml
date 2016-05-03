@@ -21,7 +21,7 @@
 			AND id=#{id}
 		</if>
 		<if test="authorId != null">
-			AND authorId=#{authorId}
+			AND author_id=#{authorId}
 		</if>
 	</select>
 

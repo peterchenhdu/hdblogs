@@ -13,6 +13,8 @@
  */
 package cn.edu.hdu.hdblogs.model;
 
+import java.sql.Timestamp;
+
 /**
  * 
  * @author    Pi Chen
@@ -27,6 +29,9 @@ public class User {
 	private String userName;
 	private String passWord;
 	private String email;
+	private String description;
+	private Timestamp registerTime;
+	private String registerAge;
 	/**
 	 * @return the id
 	 */
@@ -75,5 +80,42 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	/**
+	 * @return the registerTime
+	 */
+	public Timestamp getRegisterTime() {
+		return registerTime;
+	}
+	/**
+	 * @param registerTime the registerTime to set
+	 */
+	public void setRegisterTime(Timestamp registerTime) {
+		this.registerTime = registerTime;
+	}
+	/**
+	 * @return the registerAge
+	 */
+	public String getRegisterAge() {
+		return registerAge;
+	}
+	/**
+	 * @param registerAge the registerAge to set
+	 */
+	public void setRegisterAge(String registerAge) {
+		this.registerAge = registerAge;
+	}
+
 
 }

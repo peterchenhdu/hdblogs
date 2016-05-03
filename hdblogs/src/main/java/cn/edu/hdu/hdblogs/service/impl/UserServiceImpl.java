@@ -13,14 +13,18 @@
  */
 package cn.edu.hdu.hdblogs.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.edu.hdu.hdblogs.dao.IUserDao;
 import cn.edu.hdu.hdblogs.model.User;
 import cn.edu.hdu.hdblogs.service.IUserService;
+import cn.edu.hdu.hdblogs.service.base.BaseService;
+import cn.edu.hdu.hdblogs.util.DateUtil;
 
 /**
  * 
@@ -30,7 +34,7 @@ import cn.edu.hdu.hdblogs.service.IUserService;
  * @since HDBlogs V1.0.0
  */
 @Service
-public class UserServiceImpl implements IUserService {
+public class UserServiceImpl extends BaseService implements IUserService {
 	@Autowired
 	protected IUserDao userDao;
 
@@ -42,10 +46,28 @@ public class UserServiceImpl implements IUserService {
 	 */
 	@Override
 	public List<User> findUser(User user) {
+		
+		return userDao.findUser(user);
+		
+	}
 
+	/**
+	 * 
+	 * @see cn.edu.hdu.hdblogs.service.IUserService#findById()
+	 * @return
+	 */
+	@Override
+	public User findById(Long id) {
+		User user = new User();
+		user.setId(id);
 		List<User> userList = userDao.findUser(user);
-
-		return userList;
+		if(userList.size() != 1){
+			this.logger.error("error in method findById, invalid userid~");
+			return null;
+		}
+		User rstUser = userList.get(0);
+		rstUser.setRegisterAge(DateUtil.getInterval(rstUser.getRegisterTime(), new Date()));
+		return rstUser;
 	}
 
 }

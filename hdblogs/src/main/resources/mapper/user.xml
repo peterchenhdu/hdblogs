@@ -7,7 +7,9 @@
 		id,
 		username,
 		password,
-		email
+		email,
+		description,
+		registerTime
 	</sql>
 
 	<select id="findUser" parameterType="cn.edu.hdu.hdblogs.model.User"

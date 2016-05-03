@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.hdu.hdblogs.dao.IUserRelationDao">
+
+
+	<sql id="userColumns">
+		id,
+		userId,
+		followerId
+	</sql>
+
+	<select id="getFollowersCount" parameterType="java.util.Map"
+		resultType="java.lang.Long">
+		SELECT COUNT(id) from t_user_relation where 1=1
+
+		<if test="userId != null">
+			AND userId=#{userId}
+		</if>
+	</select>
+
+	<select id="getFollowCount" parameterType="java.util.Map"
+		resultType="java.lang.Long">
+		SELECT COUNT(id) from t_user_relation where 1=1
+
+		<if test="userId != null">
+			AND followerId=#{userId}
+		</if>
+	</select>
+
+</mapper>

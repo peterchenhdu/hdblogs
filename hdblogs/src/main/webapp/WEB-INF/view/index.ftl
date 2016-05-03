@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="${rc.contextPath}/resources/images/favicon.ico">
 
-    <title>Blog Template for Bootstrap</title>
+    <title>${userInfo.userName} - HDBlogs</title>
 
     <!-- Bootstrap core CSS -->
     <link href="${rc.contextPath}/resources/plugins/bootstrap_3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -45,23 +45,23 @@
     <div class="container">
 
       <div class="blog-header">
-        <h1 class="blog-title">The Bootstrap Blog</h1>
-        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
+        <h1 class="blog-title">${userInfo.userName}</h1>
+        <p class="lead blog-description">${userInfo.description}</p>
       </div>
 
       <div class="row">
 
         <div class="col-sm-8 blog-main">
-<#if articleList?exists>
-<#list articleList as article>   
+        <#if articleList?exists>
+        <#list articleList as article>   
           <div class="blog-post">
             <h2 class="blog-post-title">${article.title}</h2>
             <p class="blog-post-meta">${article.createDate?string("yyyy-MM-dd HH:mm:ss")} by <a href="#">${article.authorId}</a></p>
             <p>${article.content}</p>
           </div><!-- /.blog-post -->
 
-</#list>
-</#if>
+        </#list>
+        </#if>
 
 
           <nav>
@@ -75,8 +75,13 @@
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
-            <h4>关于我</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+            <h4>公告</h4>
+            <p><span>用户名：</span>${userInfo.userName}</p>
+            <p><span>注册年龄：</span>${userInfo.registerAge}</p>
+            <p><span>关注：</span>${followCount}</p>
+            <p><span>粉丝：</span>${followersCount}</p>
+            <p><span>邮箱：</span>${userInfo.email}</p>
+            <p>自我介绍：${userInfo.description}</p>
           </div>
           <div class="sidebar-module">
             <h4>归档</h4>
@@ -110,9 +115,9 @@
     </div><!-- /.container -->
 
     <footer class="blog-footer">
-      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p>Copyright ©<span id="current-year"></span> ${userInfo.userName} </p>
       <p>
-        <a href="#">Back to top</a>
+        <a href="#">返回顶部</a>
       </p>
     </footer>
 
@@ -124,5 +129,11 @@
     <script src="${rc.contextPath}/resources/plugins/bootstrap_3.3.5/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+    <script>
+    $(function(){
+        $("#current-year").text(new Date().getFullYear());
+    
+    });
+    </script>
   </body>
 </html>
