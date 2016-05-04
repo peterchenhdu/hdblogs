@@ -80,22 +80,6 @@
     <script src="${rc.contextPath}/resources/plugins/tinymce/js/tinymce/tinymce.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
-    <script>
-    $(function(){
-        $("#current-year").text(new Date().getFullYear());
-        tinymce.init({ 
-            selector:'textarea',
-            language:'zh_CN'
-        });
-        
-        $("#publish-article").on('click',function(){
-            var title =  $("#article-title").val();   
-            var content =  tinymce.get('article-content').getContent();   
-            console.log(title);
-            console.log(content);
-        });
-        
-    });
-    </script>
+    <script src="${rc.contextPath}/resources/js/article/add-article.js"></script>
   </body>
 </html>

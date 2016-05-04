@@ -34,10 +34,33 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item" href="#">HDBlogs</a>
-          <a class="blog-nav-item active" href="#">主页</a>
-          <a class="blog-nav-item" href="#">联系</a>
-          <a class="blog-nav-item" href="#">管理</a>
+          <div class="navbar-left">
+              <a class="blog-nav-item" href="#">HDBlogs</a>
+              <a class="blog-nav-item active" href="#">主页</a>
+              <a class="blog-nav-item" href="#">联系</a>
+              <a class="blog-nav-item" href="#">管理</a>
+          </div>
+          
+          <div class="navbar-right">
+          
+          <#if Session.userID?exists>
+              <div class="user-box">
+              <img src="${rc.contextPath}/resources/images/User-icon.png" alt="用户">
+              <a href="#">${Session.userName}</a>  <span>&nbsp;|&nbsp;</span><a href="#" id="logout-a">退出</a>
+              </div>
+          <#else>
+              <form class="navbar-form" id="loginForm">
+                <div class="form-group">
+                  <input id="username" placeholder="Email" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                  <input id="password" placeholder="Password" class="form-control" type="password">
+                </div>
+                <button type="button" id="login-btn" class="btn btn-success">登陆</button>
+              </form>
+          </#if>  
+          
+          </div>
         </nav>
       </div>
     </div>
@@ -129,6 +152,7 @@
     <script src="${rc.contextPath}/resources/plugins/bootstrap_3.3.5/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+    <script src="${rc.contextPath}/resources/js/user/login.js"></script>
     <script>
     $(function(){
         $("#current-year").text(new Date().getFullYear());

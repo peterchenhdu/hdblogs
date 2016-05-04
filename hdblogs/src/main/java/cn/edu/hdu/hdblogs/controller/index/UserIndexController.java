@@ -54,8 +54,7 @@ public class UserIndexController extends BaseController{
 	@RequestMapping("user")
 	public ModelAndView userIndex(Long userId) {
 		System.out.println(userId);
-		
-		User user = userService.findById(userId);
+		User user = userService.findById(new User(userId));
 		System.out.println(user.getRegisterAge());
 		ModelAndView modelAndView = new ModelAndView("/index");
 

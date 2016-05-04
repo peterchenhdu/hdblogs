@@ -13,6 +13,9 @@
  */
 package cn.edu.hdu.hdblogs.controller.base;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 
  * @author    Pi Chen
@@ -23,4 +26,5 @@ package cn.edu.hdu.hdblogs.controller.base;
 
 public class BaseController {
 
+	protected Logger logger = LoggerFactory.getLogger(this.getClass());
 }

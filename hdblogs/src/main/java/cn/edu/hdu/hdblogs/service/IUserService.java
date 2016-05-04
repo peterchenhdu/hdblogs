@@ -27,8 +27,10 @@ import cn.edu.hdu.hdblogs.model.User;
 
 public interface IUserService {
 
-	public List<User> findUser(User user);
+	public List<User> findUser(User condition);
 	
-	public User findById(Long id);
+	public User findById(User condition);
+	
+	public User findByNameAndPw(User condition);
 	
 }

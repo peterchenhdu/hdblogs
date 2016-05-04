@@ -17,9 +17,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import cn.edu.hdu.hdblogs.model.Article;
@@ -40,10 +44,19 @@ public class ArticleController {
 	@Autowired
 	private IArticleService articleService;
 
-	@RequestMapping(value = "/add")
+	@RequestMapping(value = "/toAddPage")
 	public ModelAndView getAllArticle() {
 		ModelAndView modelAndView = new ModelAndView("/article/add_article");
-
 		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/add")
+	@ResponseBody
+	public String add(HttpServletRequest request, @RequestBody Article article){
+		
+		System.out.println(article.getTitle() + article.getContent());
+		
+		request.getSession();
+		return "hello";
 	}
 }

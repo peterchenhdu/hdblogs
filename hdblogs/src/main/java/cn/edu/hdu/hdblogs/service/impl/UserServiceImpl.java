@@ -45,9 +45,9 @@ public class UserServiceImpl extends BaseService implements IUserService {
 	 * @return
 	 */
 	@Override
-	public List<User> findUser(User user) {
+	public List<User> findUser(User condition) {
 		
-		return userDao.findUser(user);
+		return userDao.findUser(condition);
 		
 	}
 
@@ -57,10 +57,8 @@ public class UserServiceImpl extends BaseService implements IUserService {
 	 * @return
 	 */
 	@Override
-	public User findById(Long id) {
-		User user = new User();
-		user.setId(id);
-		List<User> userList = userDao.findUser(user);
+	public User findById(User condition) {
+		List<User> userList = userDao.findUser(condition);
 		if(userList.size() != 1){
 			this.logger.error("error in method findById, invalid userid~");
 			return null;
@@ -68,6 +66,26 @@ public class UserServiceImpl extends BaseService implements IUserService {
 		User rstUser = userList.get(0);
 		rstUser.setRegisterAge(DateUtil.getInterval(rstUser.getRegisterTime(), new Date()));
 		return rstUser;
+	}
+
+	/**
+	 * 
+	 * @see cn.edu.hdu.hdblogs.service.IUserService#findByNameAndPw(java.lang.String, java.lang.String)
+	 * @param name
+	 * @param pw
+	 * @return
+	 */
+	@Override
+	public User findByNameAndPw(User condition) {
+		String pw = condition.getPassWord();
+		// TODO 数据库里一般存放的是加密后的密码，这里要对密码加密
+		
+		List<User> userList = this.findUser(condition);
+		if(userList.size() != 1){
+			this.logger.error("error in method findByNameAndPw, invalid name and pw~");
+			return null;
+		}
+		return userList.get(0);
 	}
 
 }

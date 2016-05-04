@@ -32,6 +32,14 @@ public class User {
 	private String description;
 	private Timestamp registerTime;
 	private String registerAge;
+
+	public User(Long id) {
+		this.id = id;
+	}
+
+	public User() {
+	}
+	
 	/**
 	 * @return the id
 	 */
