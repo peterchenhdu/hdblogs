@@ -28,4 +28,6 @@ import cn.edu.hdu.hdblogs.model.Article;
 public interface IArticleDao {
 
 	public List<Article> findArticle(Article article);
+	
+	public Long addArticle(Article article);
 }

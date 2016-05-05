@@ -18,6 +18,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import cn.edu.hdu.hdblogs.controller.base.BaseController;
 import cn.edu.hdu.hdblogs.model.Article;
 import cn.edu.hdu.hdblogs.service.IArticleService;
 
@@ -38,8 +40,8 @@ import cn.edu.hdu.hdblogs.service.IArticleService;
  */
 
 @Controller
-@RequestMapping("/article")
-public class ArticleController {
+@RequestMapping("/admin/article")
+public class ArticleController extends BaseController{
 
 	@Autowired
 	private IArticleService articleService;
@@ -54,9 +56,21 @@ public class ArticleController {
 	@ResponseBody
 	public String add(HttpServletRequest request, @RequestBody Article article){
 		
-		System.out.println(article.getTitle() + article.getContent());
 		
-		request.getSession();
-		return "hello";
+		
+		HttpSession session = request.getSession();
+		if(session.getAttribute("userName")!=null && session.getAttribute("userID")!=null){
+			System.out.println(article.getTitle() + article.getContent());
+			article.setAuthorId((Long) session.getAttribute("userID"));
+			article.setCreateDate(new Date());
+			article.setClicks(0l);
+			Long id = articleService.addArticle(article);
+			logger.info("ArticleController.add", id);
+			return "success";
+		}else{
+			return "please login.";
+		}
+		
+		
 	}
 }

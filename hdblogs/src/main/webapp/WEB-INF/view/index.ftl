@@ -38,7 +38,7 @@
               <a class="blog-nav-item" href="#">HDBlogs</a>
               <a class="blog-nav-item active" href="#">主页</a>
               <a class="blog-nav-item" href="#">联系</a>
-              <a class="blog-nav-item" href="#">管理</a>
+              <a class="blog-nav-item" href="${rc.contextPath}/admin/article/toAddPage.do">管理</a>
           </div>
           
           <div class="navbar-right">
@@ -65,12 +65,8 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" class="blog-main">
 
-      <div class="blog-header">
-        <h1 class="blog-title">${userInfo.userName}</h1>
-        <p class="lead blog-description">${userInfo.description}</p>
-      </div>
 
       <div class="row">
 
@@ -78,7 +74,7 @@
         <#if articleList?exists>
         <#list articleList as article>   
           <div class="blog-post">
-            <h2 class="blog-post-title">${article.title}</h2>
+            <h4 class="blog-post-title">${article.title}</h4>
             <p class="blog-post-meta">${article.createDate?string("yyyy-MM-dd HH:mm:ss")} by <a href="#">${article.authorId}</a></p>
             <p>${article.content}</p>
           </div><!-- /.blog-post -->

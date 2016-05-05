@@ -25,5 +25,18 @@
 		</if>
 	</select>
 
+    <insert id="addArticle" parameterType="cn.edu.hdu.hdblogs.model.Article">
+        INSERT INTO t_article
+        (
+            author_id, title, content, create_date, clicks
+        )
+        VALUES 
+        (
+            #{authorId},#{title},#{content},#{createDate},#{clicks}
+        )
+        <selectKey resultType="Long" order="AFTER" keyProperty="id">
+            <![CDATA[ SELECT LAST_INSERT_ID() AS ID  ]]> 
+        </selectKey>
+    </insert>
 
 </mapper>

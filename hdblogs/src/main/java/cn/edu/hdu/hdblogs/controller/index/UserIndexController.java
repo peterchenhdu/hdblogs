@@ -60,7 +60,7 @@ public class UserIndexController extends BaseController{
 
 		Article condition = new Article();
 		condition.setAuthorId(userId);
-		List<Article> articleList = articleService.findArticle(condition);
+		List<Article> articleList = articleService.findArticleList(condition);
 
 
 		modelAndView.addObject("articleList", articleList);

@@ -27,5 +27,7 @@ import cn.edu.hdu.hdblogs.model.Article;
 
 public interface IArticleService {
 
-	public List<Article> findArticle(Article article);
+	public List<Article> findArticleList(Article article);
+	
+	public Long addArticle(Article article);
 }

@@ -9,18 +9,21 @@
 	http://www.springframework.org/schema/mvc 
 	http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
-	<!-- 解决@ResponseBody 的实现类其默认的编码是 iso-8859-1的问题 -->
-	<mvc:annotation-driven>
-		<mvc:message-converters>
-			<!-- default StringHttpMessageConverter, solve encoding problem -->
-			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
-				<constructor-arg value="UTF-8" />
-				<property name="writeAcceptCharset" value="false" />
-			</bean>
-		</mvc:message-converters>
-	</mvc:annotation-driven>
+
 
 	<context:component-scan base-package="cn.edu.hdu.hdblogs.controller" />
+
+
+    <!-- 拦截器 -->
+    <mvc:interceptors> 
+        <mvc:interceptor> 
+            <mvc:mapping path="/admin/*" /> 
+            <mvc:mapping path="/admin/*/*" /> 
+            <bean class="cn.edu.hdu.hdblogs.core.interceptor.UserAuthInterceptor" /> 
+        </mvc:interceptor> 
+    </mvc:interceptors>
+
+
 
     <!-- freemarker的配置 -->  
     <bean id="freemarkerConfigurer"  

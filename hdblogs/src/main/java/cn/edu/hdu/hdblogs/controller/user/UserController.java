@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
 import cn.edu.hdu.hdblogs.controller.base.BaseController;
 import cn.edu.hdu.hdblogs.model.User;
 import cn.edu.hdu.hdblogs.service.IUserService;
@@ -18,6 +20,12 @@ public class UserController extends BaseController {
 	@Autowired
 	private IUserService userService;
 
+	
+	@RequestMapping("/toLoginPage")
+	public ModelAndView initLoginPage() {
+		return new ModelAndView("/login"); 
+	}
+	
 	@RequestMapping(method = RequestMethod.POST, value = "/login")
 	@ResponseBody
 	public String login(@RequestBody User userParam, HttpServletRequest request) {
